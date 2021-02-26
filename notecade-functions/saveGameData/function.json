@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "gameDataStorage",
+      "databaseName": "notecade-data",
+      "collectionName": "game-data",
+      "createIfNotExists": "true",
+      "connectionStringSetting": "notecadedata_DOCUMENTDB"
+    }
+  ]
+}

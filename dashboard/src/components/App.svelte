@@ -10,11 +10,22 @@
   <Dashboard />
 </main>
 <footer class="Site-footer">
-  <i class="nes-logo"></i>
-  <div>
-  A Pimoroni Retro Arcade Dashboard powered by the
-  <a href="https://blues.io" target="_new">Notecard</a>
-  and <a href="https://notehub.io" target="_new">Notehub.io</a>.
+  <div class="nes-container">
+    <div>
+    A <a href="https://shop.pimoroni.com/products/picade?variant=29210087489619" target="_new">Pimoroni Picade</a>
+    Dashboard powered by the
+    <a href="https://blues.io" target="_new">Notecard</a>
+    and <a href="https://notehub.io" target="_new">Notehub.io</a>.
+    </div>
+    <i class="nes-logo"></i>
+    <p>
+      <a href="https://twitter.com/blueswireless" target="_new">
+        <i class="nes-icon twitter is-medium"></i>
+      </a>
+      <a href="https://github.com/bsatrom/notecade" target="_new">
+        <i class="nes-icon github is-medium"></i>
+      </a>
+    </p>
   </div>
 </footer>
 
@@ -38,6 +49,7 @@
   }
 
   footer i {
+    margin-top: 10px;
     margin-bottom: 10px;
   }
 </style>

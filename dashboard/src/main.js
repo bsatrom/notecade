@@ -1,10 +1,7 @@
-import Vue from 'vue'
-import App from './App.vue'
-import router from './router'
+import App from './components/App.svelte';
 
-Vue.config.productionTip = false
+const app = new App({
+	target: document.body
+});
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount('#app')
+export default app;

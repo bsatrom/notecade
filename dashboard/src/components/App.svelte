@@ -10,9 +10,12 @@
   <Dashboard />
 </main>
 <footer class="Site-footer">
+  <i class="nes-logo"></i>
+  <div>
   A Pimoroni Retro Arcade Dashboard powered by the
   <a href="https://blues.io" target="_new">Notecard</a>
   and <a href="https://notehub.io" target="_new">Notehub.io</a>.
+  </div>
 </footer>
 
 <style>
@@ -22,10 +25,11 @@
 	}
 
 	h1 {
-		color: #ff3e00;
+		color: #36454f;
 		text-transform: uppercase;
-		font-size: 3em;
+		font-size: 2em;
     font-weight: 100;
-    margin-bottom: 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
 </style>

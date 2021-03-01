@@ -1,19 +1,4 @@
 <style>
-  #map {
-    width: 100%;
-    height: 80%;
-    margin-top: 5px;
-  }
-
-  #map:before {
-    box-shadow: 20px 0 10px -10px rgba(0, 0, 0, 0.15) inset;
-    content: '';
-    height: 100%;
-    left: 0;
-    position: absolute;
-    width: 20px;
-  }
-
   :global(.sd-spinner-container) {
     margin: auto;
   }
@@ -41,4 +26,9 @@
   <Spinner labeled label="Fetching..."/>
 </Backdrop>
 
-<div id="map"></div>
+<div id="dashboard">
+  <div class="nes-container with-title is-centered">
+    <p class="title">Currently Playing</p>
+    <p>River City Ransom</p>
+  </div>
+</div>

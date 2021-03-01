@@ -16,9 +16,8 @@
 </footer>
 
 <style>
-	main {
+	main, header, footer {
 		text-align: center;
-		max-width: 240px;
 		margin: 0 auto;
 	}
 

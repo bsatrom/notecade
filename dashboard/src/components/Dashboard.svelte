@@ -38,7 +38,7 @@
 </script>
 
 <Backdrop open={backdropOpen}>
-  <Spinner labeled label="Gathering Intelligence..."/>
+  <Spinner labeled label="Fetching..."/>
 </Backdrop>
 
 <div id="map"></div>

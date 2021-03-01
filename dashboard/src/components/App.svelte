@@ -32,4 +32,8 @@
     margin-top: 10px;
     margin-bottom: 20px;
   }
+
+  footer i {
+    margin-bottom: 10px;
+  }
 </style>

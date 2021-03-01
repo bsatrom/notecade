@@ -4,7 +4,7 @@
   import { Backdrop, Spinner } from 'proi-ui';
   import { getGame, getPlatform } from './lookupHelpers';
   import humanizeDuration from 'humanize-duration';
-  import { createHistogram, createPieChart } from './chartHelpers';
+  import { createPlatformPie, createGamePie, createHistogram } from './chartHelpers';
 
   let backdropOpen = true;
   let currentlyPlaying = "";
@@ -35,15 +35,15 @@
 
     // Pie Chart of all games
     const platformPieCnv = document.getElementById('platformPie');
-    createPieChart(platformPieCnv);
+    createPlatformPie(platformPieCnv, platforms);
 
     // Pie Chart of platforms
     const gamePieCnv = document.getElementById('gamePie');
-    createPieChart(gamePieCnv);
+    createGamePie(gamePieCnv, platforms);
 
     // Histogram of games, by time
     const sessionsHistCnv = document.getElementById('sessionsHist');
-    createPieChart(sessionsHistCnv);
+    //createGamePie(sessionsHistCnv, platforms);
 
     backdropOpen = false;
   });
@@ -80,11 +80,11 @@
     </ul>
   </div>
   <div class="nes-container with-title is-centered left">
-    <p class="title">Platforms</p>
+    <p class="title">Min Played By Platform</p>
     <canvas id="platformPie" width="49%"></canvas>
   </div>
   <div class="nes-container with-title is-centered right">
-    <p class="title">Games</p>
+    <p class="title">Min Played By Game</p>
     <canvas id="gamePie" width="49%"></canvas>
   </div>
   <div class="nes-container with-title is-centered all">

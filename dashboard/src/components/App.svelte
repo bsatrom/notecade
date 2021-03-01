@@ -33,6 +33,10 @@
     margin-bottom: 20px;
   }
 
+  header img {
+    max-width: 128px;
+  }
+
   footer i {
     margin-bottom: 10px;
   }

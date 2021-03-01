@@ -2,8 +2,9 @@
   import { onMount } from 'svelte';
   import { apiKey, apiUrl } from './consts';
   import { Backdrop, Spinner } from 'proi-ui';
-  import { getGame, getPlatform } from './helpers';
+  import { getGame, getPlatform } from './lookupHelpers';
   import humanizeDuration from 'humanize-duration';
+  import { createHistogram, createPieChart } from './chartHelpers';
 
   let backdropOpen = true;
   let currentlyPlaying = "";
@@ -18,7 +19,6 @@
     const response = await fetch(`${apiUrl}?code=${apiKey}`);
     const data = await response.json();
 
-    console.log(data);
     platforms = data.sessions;
 
     // Currently Playing / Last Played
@@ -34,8 +34,16 @@
     }
 
     // Pie Chart of all games
+    const platformPieCnv = document.getElementById('platformPie');
+    createPieChart(platformPieCnv);
+
     // Pie Chart of platforms
+    const gamePieCnv = document.getElementById('gamePie');
+    createPieChart(gamePieCnv);
+
     // Histogram of games, by time
+    const sessionsHistCnv = document.getElementById('sessionsHist');
+    createPieChart(sessionsHistCnv);
 
     backdropOpen = false;
   });
@@ -70,6 +78,18 @@
         <li>{getPlatform(key)} ({value.length} sessions)</li>
       {/each}
     </ul>
+  </div>
+  <div class="nes-container with-title is-centered left">
+    <p class="title">Platforms</p>
+    <canvas id="platformPie" width="49%"></canvas>
+  </div>
+  <div class="nes-container with-title is-centered right">
+    <p class="title">Games</p>
+    <canvas id="gamePie" width="49%"></canvas>
+  </div>
+  <div class="nes-container with-title is-centered all">
+    <p class="title">All Sessions</p>
+    <canvas id="sessionsHist" width="100%"></canvas>
   </div>
 </div>
 

@@ -29,13 +29,6 @@ const createPieChart = (ctx, labels, data, dataLabel) => {
 const createLineChart = (ctx, labels, data, label) => {
   new Chart(ctx, {
       type: 'line',
-      options: {
-        scales: {
-          xAxes: [{
-            type: 'time',
-          }]
-        }
-      },
       data: {
         labels: labels,
         datasets: [{
@@ -91,14 +84,31 @@ const createLineChart = (ctx, labels, data, label) => {
         }]
       },
       options: {
+        responsive: true,
+        tooltips: {
+          callbacks: {
+            title : function(tooltipItem, data) {
+              const idx = tooltipItem[0].datasetIndex;
+              const itemIdx = tooltipItem[0].index;
+              const label = tooltipItem[0].label;
+              const item = data.datasets[idx].data[itemIdx];
+              return `${item.x}: ${label}`;
+            },
+            label : function(tooltipItem, data) {
+                return ` ${tooltipItem.yLabel} minutes`;
+            }
+          }
+        },
         scales: {
+          scales: {
             x: {
                 type: 'time',
                 time: {
                     unit: 'month'
                 }
-            }
+              }
         }
+      }
     }
   });
 };
@@ -189,7 +199,8 @@ export const createHistogram = (ctx, platforms) => {
     labels.push(moment(session.start).format('MMM Do h:mm:ss'));
     data.push({
       t: new Date(session.start).toISOString(),
-      y: Math.round(session.time_played / 60)
+      y: Math.round(session.time_played / 60),
+      x: getGame(session.game)
     });
   });
 

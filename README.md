@@ -1,7 +1,7 @@
 # Notecade
 
 <p align="center">
-  <img alt="8-bit Notecard graphic" src="./assets/notecard_8bit.png">
+  <img width="250" height="250" alt="8-bit Notecard graphic" src="./assets/notecard_8bit.png">
 </p>
 
 Complete source for a Raspberry Pi, [Notecard](https://blues.io) and [Notehub.io](https://notehub.io)-based retro-gaming monitor. The [full project writeup is on Hackster.io](https://www.hackster.io/brandonsatrom/).

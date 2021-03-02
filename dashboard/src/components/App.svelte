@@ -18,6 +18,12 @@
     and <a href="https://notehub.io" target="_new">Notehub.io</a>.
     </div>
     <i class="nes-logo"></i>
+    <div>
+      Front-end built with <a href="https://svelte.dev/" target="_new">SvelteJS</a>,
+      <a href="https://www.chartjs.org/" target="_new">Chart.js</a>
+      and <a href="https://nostalgic-css.github.io/NES.css/" target="_new">NES.css</a>.
+    </div>
+    <i class="snes-logo"></i>
     <p>
       <a href="https://twitter.com/blueswireless" target="_new">
         <i class="nes-icon twitter is-medium"></i>

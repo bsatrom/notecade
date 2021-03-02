@@ -13,7 +13,7 @@ export const gameLookup = {
   "altbeast": "Altered Beast",
   "RiverCityRansom": "River City Ransom",
   "Faxanadu (USA)": "Faxanadu",
-  "Goldeneye 007 (E)": "Goldeneye",
+  "GoldenEye 007 (E)": "Goldeneye",
   "Double Dragon 2 - The Revenge": "Double Dragon 2",
   "Contra III - The Alien Wars": "Contra III",
   "Legend of Zelda, The - A Link to the Past": "A Link To The Past",

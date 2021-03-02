@@ -194,7 +194,7 @@ export const createHistogram = (ctx, platforms) => {
     allSessions = allSessions.concat(sessions);
   }
 
-  allSessions = allSessions.sort((first, second) => second.start - first.start);
+  allSessions = allSessions.sort((first, second) => new Date(first.start) - new Date(second.start));
   allSessions.map(session => {
     labels.push(moment(session.start).format('MMM Do h:mm:ss'));
     data.push({

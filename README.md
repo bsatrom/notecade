@@ -1,8 +1,8 @@
 # Notecade
 
-![8-bit Notecard Grapic](assets/notecard_8bit.png)
+![8-bit Notecard Grapic](./assets/notecard_8bit.png)
 
-Complete source for a Raspberry Pi, [Notecard](https://blues.io) and [Notehub.io](https://notehub.io)-based retro-gaming monitor.
+Complete source for a Raspberry Pi, [Notecard](https://blues.io) and [Notehub.io](https://notehub.io)-based retro-gaming monitor. The [full project writeup is on Hackster.io](https://www.hackster.io/brandonsatrom/).
 
 This repository contains the complete source for the Notecade project, including:
 

@@ -5,6 +5,7 @@
 <header class="Site-header">
   <img src="assets/notecard_8bit.png" alt="8-bit Notecard Icon" />
   <h1>Notecade!</h1>
+  <a class="nes-btn is-primary" target="_new" href="https://www.hackster.io/brandonsatrom/notecade-monitor-your-retro-gaming-with-the-notecard-31c3ea">Project writeup</a>
 </header>
 <main class="Site-content">
   <Dashboard />
@@ -52,6 +53,10 @@
 
   header img {
     max-width: 128px;
+  }
+
+  .nes-btn {
+    margin-bottom: 20px;
   }
 
   footer i {

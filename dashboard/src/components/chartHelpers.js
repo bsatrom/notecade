@@ -1,4 +1,6 @@
 import Chart from 'chart.js';
+import moment from 'moment';
+import 'chartjs-adapter-moment';
 import { getPlatform, getGame } from './lookupHelpers';
 
 Chart.defaults.global.defaultFontFamily = "'Press Start 2P', sans-serif";
@@ -12,52 +14,123 @@ const createPieChart = (ctx, labels, data, dataLabel) => {
             label: dataLabel,
             data: data,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
+                '#92cb41',
+                '#299cee',
+                '#e76e55',
+                '#f7d51c',
+                '#fcf105',
+                '#5ceee1'
+            ]
         }]
     }
   });
 };
 
-const createLineChart = (ctx, labels, data, dataLabel) => {
+const createLineChart = (ctx, labels, data, label) => {
   new Chart(ctx, {
-    type: 'line',
+      type: 'line',
+      options: {
+        scales: {
+          xAxes: [{
+            type: 'time',
+          }]
+        }
+      },
+      data: {
+        labels: labels,
+        datasets: [{
+          label: label,
+          data: data,
+          backgroundColor: [
+            'rgba(1, 148, 63, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(1, 148, 63, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(1, 148, 63, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)',
+            'rgba(1, 148, 63, 0.2)',
+            'rgba(54, 162, 235, 0.2)',
+            'rgba(255, 206, 86, 0.2)',
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(153, 102, 255, 0.2)',
+            'rgba(255, 159, 64, 0.2)'
+          ],
+          borderColor: [
+            'rgba(1, 148, 63, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(1, 148, 63, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)',
+            'rgba(1, 148, 63, 1)',
+            'rgba(54, 162, 235, 1)',
+            'rgba(255, 206, 86, 1)',
+            'rgba(75, 192, 192, 1)',
+            'rgba(153, 102, 255, 1)',
+            'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        scales: {
+            x: {
+                type: 'time',
+                time: {
+                    unit: 'month'
+                }
+            }
+        }
+    }
+  });
+};
+
+const createBarChart = (ctx, labels, data, dataLabel) => {
+  new Chart(ctx, {
+    type: 'horizontalBar',
     data: {
         labels: labels,
         datasets: [{
             label: dataLabel,
             data: data,
             backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
+              '#92cb41',
+              '#299cee',
+              '#e76e55',
+              '#f7d51c',
+              '#fcf105',
+              '#5ceee1',
+              '#92cb41',
+              '#299cee',
+              '#e76e55',
+              '#f7d51c',
+              '#fcf105',
+              '#5ceee1',
+              '#92cb41',
+              '#299cee',
+              '#e76e55',
+              '#f7d51c',
+              '#fcf105',
+              '#5ceee1'
+            ]
         }]
     }
   });
@@ -78,7 +151,7 @@ export const createPlatformPie = (ctx, platforms) => {
   createPieChart(ctx, labels, data, '# of minutes played');
 };
 
-export const createGamePie = (ctx, platforms) => {
+export const createGameChart = (ctx, platforms) => {
   let labels = [];
   let data =[];
   let allSessions = [];
@@ -98,9 +171,27 @@ export const createGamePie = (ctx, platforms) => {
     }
   });
 
-  createLineChart(ctx, labels, data, '# of minutes played');
+  createBarChart(ctx, labels, data, '# of minutes played');
 };
 
-export const createHistogram = (ctx) => {
+export const createHistogram = (ctx, platforms) => {
+  let labels = [];
+  let data = [];
+  let allSessions = [];
 
+  for (const [key, value] of Object.entries(platforms)) {
+    let sessions = [...value];
+    allSessions = allSessions.concat(sessions);
+  }
+
+  allSessions = allSessions.sort((first, second) => second.start - first.start);
+  allSessions.map(session => {
+    labels.push(moment(session.start).format('MMM Do h:mm:ss'));
+    data.push({
+      t: new Date(session.start).toISOString(),
+      y: Math.round(session.time_played / 60)
+    });
+  });
+
+  createLineChart(ctx, labels, data, 'Session Length');
 };

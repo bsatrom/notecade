@@ -4,7 +4,7 @@
   import { Backdrop, Spinner } from 'proi-ui';
   import { getGame, getPlatform } from './lookupHelpers';
   import humanizeDuration from 'humanize-duration';
-  import { createPlatformPie, createGamePie, createHistogram } from './chartHelpers';
+  import { createPlatformPie, createGameChart, createHistogram } from './chartHelpers';
 
   let backdropOpen = true;
   let currentlyPlaying = "";
@@ -39,11 +39,11 @@
 
     // Pie Chart of platforms
     const gamePieCnv = document.getElementById('gamePie');
-    createGamePie(gamePieCnv, platforms);
+    createGameChart(gamePieCnv, platforms);
 
     // Histogram of games, by time
     const sessionsHistCnv = document.getElementById('sessionsHist');
-    //createGamePie(sessionsHistCnv, platforms);
+    createHistogram(sessionsHistCnv, platforms);
 
     backdropOpen = false;
   });

@@ -15,7 +15,7 @@
     "chartjs-adapter-moment": "^0.1.2",
     "dotenv": "^8.2.0",
     "humanize-duration": "^3.25.1",
-    "moment": "^2.29.1",
+    "moment": "^2.29.4",
     "nes.css": "^2.3.0",
     "proi-ui": "^0.1.7",
     "proi-ui-icons": "0.0.3",
